@@ -24,6 +24,11 @@ namespace shir_heler_project
         {
             InitializeComponent();
             WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
+
+            Dictionary<string, string> properties = new Dictionary<string, string>();
+
+            //default car color
+            properties.Add("car_color", "red");
         }
 
         private void play_button_clicked(object sender, RoutedEventArgs e)

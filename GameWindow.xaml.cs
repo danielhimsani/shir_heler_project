@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,10 +20,32 @@ namespace shir_heler_project
     /// </summary>
     public partial class GameWindow : Window
     {
+
+        const string LEFT_KEY = "Left";
+        const string RIGHT_KEY = "Right";
+
+        CarObject player_car_object;
         public GameWindow()
         {
             InitializeComponent();
             WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
+            this.player_car_object = new CarObject(player_car);
+            
+
+            this.KeyDown += new KeyEventHandler(OnButtonKeyDown);
+        }
+
+        private void OnButtonKeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key.ToString() == LEFT_KEY)
+            {
+                this.player_car_object.ModeLeft();
+            }
+            else if (e.Key.ToString() == RIGHT_KEY)
+            {
+                this.player_car_object.MoveRight();
+            }
+                
         }
     }
 }

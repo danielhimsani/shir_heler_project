@@ -67,6 +67,8 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="CarObject.cs" />
+    <Compile Include="GameObject.cs" />
     <Compile Include="GameWindow.xaml.cs">
       <DependentUpon>GameWindow.xaml</DependentUpon>
     </Compile>
@@ -109,6 +111,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="images\road_background.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\cars\blue.png" />
+    <Resource Include="images\cars\gray.png" />
+    <Resource Include="images\cars\orange.png" />
+    <Resource Include="images\cars\red.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
