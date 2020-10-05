@@ -35,6 +35,8 @@ namespace shir_heler_project
             this.KeyDown += new KeyEventHandler(OnButtonKeyDown);
         }
 
+        //Event listener for keyboard clicking
+        //Used to moving the car from lane to lane
         private void OnButtonKeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key.ToString() == LEFT_KEY)

@@ -113,10 +113,20 @@
     <Resource Include="images\road_background.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="images\cars\blue.png" />
-    <Resource Include="images\cars\gray.png" />
-    <Resource Include="images\cars\orange.png" />
-    <Resource Include="images\cars\red.png" />
+    <Resource Include="images\player_cars\blue.png" />
+    <Resource Include="images\player_cars\gray.png" />
+    <Resource Include="images\player_cars\orange.png" />
+    <Resource Include="images\player_cars\red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\random_road_cars\1.png" />
+    <Resource Include="images\random_road_cars\2.png" />
+    <Resource Include="images\random_road_cars\3.png" />
+    <Resource Include="images\random_road_cars\4.png" />
+    <Resource Include="images\random_road_cars\5.png" />
+    <Resource Include="images\random_road_cars\6.png" />
+    <Resource Include="images\random_road_cars\7.png" />
+    <Resource Include="images\random_road_cars\8.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

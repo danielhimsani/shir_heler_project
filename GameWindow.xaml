@@ -7,8 +7,8 @@
         mc:Ignorable="d"
         Title="GameWindow" Height="450" Width="800">
     <Grid>
-        <Image  Source="pack://application:,,,/images/road_background.jpg"  Stretch="Fill" Height="900"  />
+        <Image  Source="pack://application:,,,/images/road_background.jpg"  Stretch="Fill" Height="1000"  />
 
-        <Image Name="player_car" Source="pack://application:,,,/images/cars/red.png"  Width="50" Height="100" Margin="390, 296, 352, 23" />
+        <Image Name="player_car" Source="pack://application:,,,/images/player_cars/red.png"  Width="50" Height="100" Margin="390, 296, 352, 23" />
     </Grid>
 </Window>
