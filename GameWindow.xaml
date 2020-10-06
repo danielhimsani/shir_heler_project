@@ -5,10 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:shir_heler_project"
         mc:Ignorable="d"
-        Title="GameWindow" Height="450" Width="800">
-    <Grid>
-        <Image  Source="pack://application:,,,/images/road_background.jpg"  Stretch="Fill" Height="1000"  />
+        Title="GameWindow" Height="500" Width="800">
+    <Canvas Name="game_canvas" >
+        <Image Name="window_background"  Source="pack://application:,,,/images/road_background.jpg" Stretch="Fill" Width="800" Height="1500" Canvas.Top="-1030"   />
 
-        <Image Name="player_car" Source="pack://application:,,,/images/player_cars/red.png"  Width="50" Height="100" Margin="390, 296, 352, 23" />
-    </Grid>
+        <Image Name="player_car" Source="pack://application:,,,/images/player_cars/red.png"  Width="50" Height="100" Canvas.Left="400" Canvas.Top="340"   />
+    </Canvas>
 </Window>

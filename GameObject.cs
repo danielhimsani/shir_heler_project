@@ -22,7 +22,7 @@ namespace shir_heler_project
         }
 
         //Check if the current object is collapse with another object
-        public bool is_bounce_other_object(GameObject other_object)
+        public bool IsBounceOtherObject(GameObject other_object)
         {
             return (Math.Abs(this.x_position - other_object.x_position) * 2 < (this.width + other_object.width) &&
                 Math.Abs(this.y_position - other_object.y_position) * 2 < (this.height + other_object.height));
