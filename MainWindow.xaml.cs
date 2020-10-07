@@ -29,12 +29,28 @@ namespace shir_heler_project
 
             //default car color
             properties.Add("car_color", "red");
+
+            DBWrapper.ExecuteSqlCommand("users.sqlite", "select * from users");
         }
 
         private void play_button_clicked(object sender, RoutedEventArgs e)
         {
             GameWindow game_window = new GameWindow();
             game_window.Show();
+            this.Close();
+        }
+
+        private void leaderboard_click(object sender, RoutedEventArgs e)
+        {
+            LeaderboardWindow leaderboard_window = new LeaderboardWindow();
+            leaderboard_window.Show();
+            this.Close();
+        }
+
+        private void sign_in_button(object sender, RoutedEventArgs e)
+        {
+            SignInWindow sign_in_window = new SignInWindow();
+            sign_in_window.Show();
             this.Close();
         }
     }

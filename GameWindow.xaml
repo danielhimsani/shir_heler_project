@@ -10,5 +10,6 @@
         <Image Name="window_background"  Source="pack://application:,,,/images/road_background.jpg" Stretch="Fill" Width="800" Height="1500" Canvas.Top="-1030"   />
 
         <Image Name="player_car" Source="pack://application:,,,/images/player_cars/red.png"  Width="50" Height="100" Canvas.Left="400" Canvas.Top="340"   />
+        <Label  Name="score_label" Content="Score: XXX"  FontSize="30" Background="#e6b800" FontStyle="Italic" FontWeight="Bold"  />
     </Canvas>
 </Window>

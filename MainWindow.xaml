@@ -31,9 +31,15 @@
                 </TransformGroup>
             </Grid.RenderTransform>
             <Button x:Name="start_game_button" Margin="0,10,0,76" Background="Transparent" Content="Play" Height="30" FontSize="20" Grid.ColumnSpan="2"  Click="play_button_clicked" BorderBrush="{x:Null}" />
-            <Button x:Name="sign_in_button"  Background="Transparent" Content="Sign in" FontSize="20" Height="30" Grid.ColumnSpan="2" BorderBrush="{x:Null}"/>
+            <Button x:Name="sign_in"  Background="Transparent" Content="Sign in" FontSize="20" Height="30" Grid.ColumnSpan="2" BorderBrush="{x:Null}" Click="sign_in_button" />
             <Button x:Name="help_button"   Background="Transparent" Content="Help" FontSize="20" Grid.ColumnSpan="2" Height="30" Margin="0,39,0,-39" BorderBrush="{x:Null}" />
         </Grid>
+
+        <Image Source="pack://application:,,,/images/leaderboard_button.png"  Stretch="Fill" Margin="187,332,37,10" Grid.ColumnSpan="2"   />
+        <Button  Margin="187,332,37,10" Grid.ColumnSpan="2"  Background="Transparent"  BorderBrush="Transparent"  Click="leaderboard_click" />
+
+
+
 
 
 

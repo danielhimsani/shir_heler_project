@@ -27,8 +27,11 @@ namespace shir_heler_project
         const int BACKGROUND_START_TOP = -1030; 
 
         CarObject player_car_object;
+        
 
         private int background_top;
+        private int score;
+        private bool is_alive;
 
         private List<EnemyCar> enemys = new List<EnemyCar>();
 
@@ -40,6 +43,13 @@ namespace shir_heler_project
             this.background_top = BACKGROUND_START_TOP;
             this.player_car_object = new CarObject(player_car);
             this.KeyDown += new KeyEventHandler(OnButtonKeyDown);
+
+            this.score = 0;
+            UpdateScoreLabel();
+            ScoreCounting();
+
+            this.is_alive = true;
+
 
             //the background scorller thread
             ScrollBackground();
@@ -56,6 +66,33 @@ namespace shir_heler_project
             //the thread that check everytime if the player car crashed with other cars
             CheckForCrush();
 
+        }
+
+        private void UpdateScoreLabel()
+        {
+            Dispatcher.Invoke(() =>
+            {
+                score_label.Content = "Score: " + this.score;
+            });
+        }
+
+
+        private void ScoreCounting()
+        {
+            Task.Run(() =>
+            {
+                while (true)
+                {
+                    this.score += 1;
+                    UpdateScoreLabel();
+                    System.Threading.Thread.Sleep(100);
+                    if (! this.is_alive)
+                    {
+                        break;
+                    }
+                }
+                
+            });
         }
 
 
@@ -77,6 +114,11 @@ namespace shir_heler_project
                                 {
                                     Dispatcher.Invoke(() =>
                                     {
+                                        //TODO -> write the current score to the sql db
+                                        this.is_alive = false;
+                                        MessageBox.Show("Your score is: " + this.score + "!", "Wasted...");
+                                        MainWindow main_window = new MainWindow();
+                                        main_window.Show();
                                         this.Close();
                                     });
                                 }
@@ -86,6 +128,10 @@ namespace shir_heler_project
                                 }
                                 
                             }
+                        }
+                        if (!this.is_alive)
+                        {
+                            break;
                         }
                     }
                 }
@@ -110,6 +156,10 @@ namespace shir_heler_project
                         this.enemys.Add(temp_enemy);
                     }
                     System.Threading.Thread.Sleep(1800);
+                    if (!this.is_alive)
+                    {
+                        break;
+                    }
                 }
             });
         }
@@ -134,6 +184,10 @@ namespace shir_heler_project
                         }
                         System.Threading.Thread.Sleep(200);
                     }
+                    if (!this.is_alive)
+                    {
+                        break;
+                    }
                 }
             });
         }
@@ -145,6 +199,7 @@ namespace shir_heler_project
                 while (true)
                 {
                     this.background_top += 1;
+                    
                     if (this.background_top >= -30)
                     {
                         this.background_top = BACKGROUND_START_TOP;
@@ -163,8 +218,12 @@ namespace shir_heler_project
                     {
                         break;
                     }
-                    
+                    if (!this.is_alive)
+                    {
+                        break;
+                    }
                 }
+                
             });
         }
 
