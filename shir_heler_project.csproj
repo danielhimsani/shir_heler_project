@@ -120,7 +120,7 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <None Include="users.sqlite" />
+    <None Include="users.db" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

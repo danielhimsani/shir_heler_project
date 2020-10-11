@@ -179,7 +179,6 @@ namespace shir_heler_project
                             if (!this.enemys[i].IsAlive())// if the car is dead (out of window frame)
                             {
                                 this.enemys.Remove(this.enemys[i]);
-
                             }
                         }
                         System.Threading.Thread.Sleep(200);

@@ -30,7 +30,7 @@ namespace shir_heler_project
             //default car color
             properties.Add("car_color", "red");
 
-            DBWrapper.ExecuteSqlCommand("users.sqlite", "select * from users");
+            DBWrapper.ExecuteSqlCommand(@"C:\Users\danie\OneDrive\Documents\developing\shir_heler_project\users.db", "select * from users");
         }
 
         private void play_button_clicked(object sender, RoutedEventArgs e)
